@@ -5,18 +5,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="form-group mb-2">
-                    <a href="{{ url('master-items') }}" class="btn btn-secondary">Kembali ke Daftar Item</a>
+                    <a href="{{ url('kategori-items/form/new') }}" class="btn btn-success">+ Kategori Items</a>
                 </div>
                 <div class="card">
-
-                    @if ($method == 'new')
-                        <div class="card-header">Buat Master Item Baru</div>
-                    @else
-                        <div class="card-header">Edit Master Item</div>
-                    @endif
+                    <div class="card-header">Daftar Kategori Items</div>
 
                     <div class="card-body">
-                        @include('master_items.form.form')
+                        @include('kategori_items.index.filter')
+                        @include('kategori_items.index.table')
                     </div>
                 </div>
             </div>
@@ -24,4 +20,5 @@
     </div>
 @endsection
 @section('js')
+    @include('kategori_items.index.js')
 @endsection
